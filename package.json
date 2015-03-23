@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SimonSun1988/ReservoirTaiwan.git"
+    "url": "https://github.com/washwashsleep/TaiwanReservoirAPI.git"
   },
   "keywords": [
     "水庫",
@@ -17,9 +17,9 @@
   "author": "Simon Sun",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SimonSun1988/ReservoirTaiwan/issues"
+    "url": "https://github.com/washwashsleep/TaiwanReservoirAPI/issues"
   },
-  "homepage": "https://github.com/SimonSun1988/ReservoirTaiwan",
+  "homepage": "https://github.com/washwashsleep/TaiwanReservoirAPI",
   "dependencies": {
     "async": "^0.9.0",
     "cheerio": "^0.19.0",
