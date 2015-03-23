@@ -2,7 +2,7 @@
 
 **台灣水庫資訊 API**
 
-[![Build Status](https://travis-ci.org/washwashsleep/TaiwanReservoirAPI.svg?branch=lib_reservoir)](https://travis-ci.org/washwashsleep/TaiwanReservoirAPI)
+[![Build Status](https://travis-ci.org/washwashsleep/TaiwanReservoirAPI.svg?branch=master)](https://travis-ci.org/washwashsleep/TaiwanReservoirAPI)
 
 # Online API endpoint
 
