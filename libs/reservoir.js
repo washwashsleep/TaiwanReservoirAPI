@@ -2,7 +2,7 @@ var request = require('request');
 var async = require('async');
 var cheerio = require('cheerio');
 
-var reservoirGovUrl = 'http://fhy.wra.gov1.tw/ReservoirPage_2011/StorageCapacity.aspx';
+var reservoirGovUrl = 'http://fhy.wra.gov.tw/ReservoirPage_2011/StorageCapacity.aspx';
 
 
 module.exports = function (callback) {

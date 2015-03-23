@@ -4,7 +4,7 @@
   "description": "台灣水庫儲存量圖像表",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
