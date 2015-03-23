@@ -1,6 +1,10 @@
 # TaiwanReservoirAPI
 台灣水庫資訊 API
 
+# API endpoint
+
+http://128.199.223.114:10080/
+
 # 參數說明
 
 | 參數名稱 | 說明  |
