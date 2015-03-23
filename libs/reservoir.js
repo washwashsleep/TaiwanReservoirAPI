@@ -2,18 +2,17 @@ var request = require('request');
 var async = require('async');
 var cheerio = require('cheerio');
 
-var reservoirGovUrl = 'http://fhy.wra.gov1.tw/ReservoirPage_2011/StorageCapacity.aspx';
-
+var _RESERVOIRGOVURL = 'http://fhy.wra.gov.tw/ReservoirPage_2011/StorageCapacity.aspx';
 
 module.exports = function (callback) {
 
-	async.waterfall([
+    async.waterfall([
 
         /*
          * 得到目前網頁資料的 html
          */
         function (cb){
-            request(reservoirGovUrl, function (error, response, body) {
+            request(_RESERVOIRGOVURL, function (error, response, body) {
 
                 if(error){
                     return cb(error);
