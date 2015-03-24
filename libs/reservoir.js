@@ -1,6 +1,7 @@
 var request = require('request');
 var async = require('async');
 var cheerio = require('cheerio');
+var moment = require('moment');
 
 var _RESERVOIRGOVURL = 'http://fhy.wra.gov.tw/ReservoirPage_2011/StorageCapacity.aspx';
 
@@ -28,6 +29,8 @@ module.exports = function (callback) {
         function (html, cb){
 
             var outputData = [];
+
+            var lastedUpdateTime = moment().format('YYYY-MM-DD HH:mm:ss');
 
             var $ = cheerio.load(html);
 
@@ -63,6 +66,7 @@ module.exports = function (callback) {
                     immediateLevel: immediateLevel,
                     immediateStorage: immediateStorage,
                     immediatePercentage: immediatePercentage,
+                    lastedUpdateTime: lastedUpdateTime
                 });
             });
 

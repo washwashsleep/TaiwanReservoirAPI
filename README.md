@@ -24,6 +24,7 @@ http://128.199.223.114:10080/
 | immediateLevel  |  即時水位(公尺)|
 | immediateStorage  |  即時有效蓄水量(萬立方公尺)|
 | immediatePercentage  |  即時蓄水量百分比(%)|
+| lastedUpdateTime  |  api 最後更新時間 |
 
 # How to use
 
