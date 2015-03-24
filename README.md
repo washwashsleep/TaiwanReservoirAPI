@@ -50,6 +50,10 @@ http://128.199.223.114:10080/
 
 `node app.js`
 
+**Debug mode**
+
+`DEBUG=reservoir node app.js`
+
 ## See result
 
 **Open your browser and type**
