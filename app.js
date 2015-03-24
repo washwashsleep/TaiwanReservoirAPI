@@ -3,6 +3,7 @@
 var express = require('express');
 var app = express();
 var schedule = require('node-schedule');
+var debug = require('debug')('reservoir');
 
 
 // Defined output data
@@ -14,19 +15,19 @@ var reservoir = require('./libs/reservoir');
 
 
 // Cron job for update output data
-var updateData = schedule.scheduleJob('* */30 * * *', function(){
+var updateData = schedule.scheduleJob('45 8 * * 1-5', function(){
     reservoir(function (err, reservoirData){
 
         if (err) {
-            console.log('---------------- ERROR ----------------');
-            console.log(err.toString());
-            console.log('---------------- ERROR ----------------');
+            debug('---------------- ERROR ----------------');
+            debug(err.toString());
+            debug('---------------- ERROR ----------------');
         }
 
         outputData = reservoirData;
-        console.log('---------------- SUCCESS ----------------');
-        console.log('UPDATE OUTPUT DATA SUCCESS');
-        console.log('---------------- SUCCESS ----------------');
+        debug('---------------- SUCCESS ----------------');
+        debug('UPDATE OUTPUT DATA SUCCESS');
+        debug('---------------- SUCCESS ----------------');
         return;
     });
 });
