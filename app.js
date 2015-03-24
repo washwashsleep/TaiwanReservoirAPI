@@ -15,7 +15,7 @@ var reservoir = require('./libs/reservoir');
 
 
 // Cron job for update output data
-var updateData = schedule.scheduleJob('45 8 * * 1-5', function(){
+var updateData = schedule.scheduleJob('*/30 * * * 1-5', function(){
     reservoir(function (err, reservoirData){
 
         if (err) {
