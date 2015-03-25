@@ -12,6 +12,7 @@ var outputData;
 
 // Library
 var reservoir = require('./libs/reservoir');
+var reservoir_today = require('./libs/reservoir_today');
 
 
 // Cron job for update output data
@@ -54,6 +55,23 @@ app.get('/', function(req, res) {
 
         return res.jsonp({
             data: outputData
+        });
+    });
+
+});
+
+app.get('/today', function(req, res) {
+
+    reservoir_today(function (err, reservoirData) {
+
+        if (err) {
+            return res.jsonp({
+                err: err.toString()
+            });
+        }
+
+        return res.jsonp({
+            data: reservoirData
         });
     });
 
