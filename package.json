@@ -2,7 +2,6 @@
   "name": "ReservoirTaiwan",
   "version": "1.0.0",
   "description": "台灣水庫儲存量圖像表",
-  "main": "libs/reservoir.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha -t 5000"
   },
@@ -27,7 +26,8 @@
     "express": "^4.12.3",
     "moment": "^2.9.0",
     "node-schedule": "^0.2.6",
-    "request": "^2.53.0"
+    "request": "^2.53.0",
+    "json-query": "^1.4.0"
   },
   "devDependencies": {
     "mocha": "^2.2.1"
