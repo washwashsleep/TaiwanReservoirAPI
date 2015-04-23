@@ -20,12 +20,10 @@ module.exports = function (callback) {
                 }).key;
                 
                 if (key !== null) {
-                    if (reservoirData[key]) {
                         reservoirData[key].immediateTime = element.immediateTime;
                         reservoirData[key].immediateLevel = element.immediateLevel;
                         reservoirData[key].immediateStorage = element.immediateStorage;
                         reservoirData[key].immediatePercentage = element.immediatePercentage;
-                    }
                 }
 
             });
