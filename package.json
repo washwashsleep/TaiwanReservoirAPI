@@ -2,6 +2,7 @@
   "name": "ReservoirTaiwan",
   "version": "1.0.0",
   "description": "台灣水庫儲存量圖像表",
+  "main": "libs/rservoir.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha -t 5000"
   },
