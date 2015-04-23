@@ -29,7 +29,6 @@ module.exports = function (callback) {
         function (html, cb){
 
             var now = moment();
-            var yesterday
             var $ = cheerio.load(html);
 
             var form = $('#form1');
@@ -45,7 +44,7 @@ module.exports = function (callback) {
               '__EVENTARGUMENT': '',
               '__LASTFOCUS': '',
               '__ASYNCPOST': true
-            }
+            };
             // 把剩下的欄位補上
             var arr = form.serializeArray();
             for (var i in arr) {
@@ -133,7 +132,6 @@ module.exports = function (callback) {
         if (!outputData || outputData.length === 0) {
             return callback(new Error('outputData not found'));
         }
-
 
         callback(null, outputData);
     });

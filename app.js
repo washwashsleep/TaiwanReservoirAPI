@@ -4,6 +4,7 @@ var express = require('express');
 var app = express();
 var schedule = require('node-schedule');
 var debug = require('debug')('reservoir');
+var jsonQuery = require('json-query');
 
 
 // Defined output data
@@ -13,6 +14,7 @@ var outputData;
 // Library
 var reservoir = require('./libs/reservoir');
 var reservoir_today = require('./libs/reservoir_today');
+var reservoir_immediate = require('./libs/main');
 
 
 // Cron job for update output data
@@ -75,6 +77,21 @@ app.get('/today', function(req, res) {
         });
     });
 
+});
+
+//Merge the statistic of reservoir.js with reservoir_today.js
+app.get('/immediate',function(req, res){
+    reservoir_immediate(function (err, reservoirData) {
+        if (err) {
+            return res.jsonp({
+                err: err.toString()
+            });
+        }
+
+        return res.jsonp({
+            data: reservoirData
+        });
+    });
 });
 
 app.set('port', process.env.PORT || 10080);
