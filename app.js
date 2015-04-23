@@ -14,7 +14,7 @@ var outputData;
 // Library
 var reservoir = require('./libs/reservoir');
 var reservoir_today = require('./libs/reservoir_today');
-var reservoir_immediate = require('./libs/reservoir_immediate');
+var reservoir_immediate = require('./libs/main');
 
 
 // Cron job for update output data
@@ -79,47 +79,19 @@ app.get('/today', function(req, res) {
 
 });
 
+//Merge the statistic of reservoir.js with reservoir_today.js
 app.get('/immediate',function(req, res){
-    //Merge the daily reservoir data with much more immediate data
-    reservoir(function (err, reservoirData) {
-        if (err)
-        {
+    reservoir_immediate(function (err, reservoirData) {
+        if (err) {
             return res.jsonp({
                 err: err.toString()
             });
         }
-    
-        reservoir_immediate(function (err, immediateData) {
-            if (err)
-            {
-                return res.jsonp({
-                    err: err.toString()
-                });
-            }
 
-            immediateData.forEach(function (element, index, array) {
-                var key = jsonQuery('reserv[reservoirName=' + element.reservoirName + ']', {
-                    data: {
-                        reserv: reservoirData
-                    }
-                }).key;
-                
-                if (key !== null) {
-                    if (reservoirData[key]) {
-                        reservoirData[key].lastedUpdateTime = element.lastedUpdateTime;
-                        reservoirData[key].immediateLevel = element.immediateLevel;
-                        reservoirData[key].immediateStorage = element.immediateStorage;
-                        reservoirData[key].immediatePercentage = element.immediatePercentage;
-                    }
-                }
-            });
-
-            return res.jsonp({
-                data: reservoirData
-            });
+        return res.jsonp({
+            data: reservoirData
         });
     });
-
 });
 
 app.set('port', process.env.PORT || 10080);
